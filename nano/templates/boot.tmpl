@@ -1,0 +1,32 @@
+<div class="item">
+        <div class="itemLabel">
+            <b>System console</b>:
+        </div>
+        <div class="itemContent">
+            {{:data.name}}
+        </div>
+    </div>
+</div>
+ <div class="item" style="text-align:right">
+	<div class="itemLabel">
+		{{:~displayBar(boot_ticks >= 50 ? 'good' : boot_ticks >= 15 ? 'average' : 'bad')}}
+	</div>
+	<div class="itemContent">
+		{{:~round(boot_ticks*10)/10}}%
+	</div>
+<div style="text-align:center">
+	{{:~link('', 'triangle-1-w', {'set_input_level' : 'minus'}, boot_ticks == 0 ? 'disabled' : null)}}
+
+	{{:~link('', 'triangle-1-e', {'set_input_level' : 'plus'}, boot_ticks == 30 ? 'disabled' : null)}}
+
+	<div class="item">
+		<div class="itemLabel">
+			Ticks
+		</div>
+		<div class = "itemContent" style="text-align:right">
+			{{:~round(boot_ticks)}}</span> 
+		</div>
+	</div>
+</div>
+			
+								

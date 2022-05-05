@@ -1,0 +1,73 @@
+<div style="float:left;width:50%">
+	<h3>Object information</h3> 
+	<div class='block'>
+		{{:obj_name}}
+		<br>
+		<span class='average'>Coordinates:</span> {{:obj_x}} : {{:obj_y}}
+		<br>
+		<span class='average'>Additional information:</span> {{:sector_info}}
+	</div>
+</div>
+
+<div style="float:right;width:50%">
+	<h3>Flight data</h3> 
+	<div class='block'>
+		<div class='item'>
+			<div class="itemLabel">
+				<span class='average'>Speed:</span>
+			</div>
+			<div style="float:right">
+				{{:obj_speed}}
+			</div>
+		</div>
+		<div class='item'>
+			<div class="itemLabel">
+				<span class='average'>Acceleration:</span>
+			</div>
+			<div style="float:right">
+				{{:obj_accel}}
+			</div>
+		</div>
+		<div class='item'>
+			<div class="itemLabel">
+				<span class='average'>Heading:</span>
+			</div>
+			<div style="float:right">
+				{{:obj_heading}}
+			</div>
+		</div> 
+	</div>
+</div>
+
+<div class='block'>
+	<div class='item'>
+		<div class="itemLabel">
+		<div class="itemContent">
+			<div class='item'>
+				<span class='white'>Watch space</span>
+				{{:~link(manual_control ? 'Engaged' : 'Disengaged', 'shuffle', { 'manual' : 1 }, null, manual_control ? 'selected' : null)}}		
+			</div>
+		</div>
+	</div>
+</div>
+
+<h3>Navigation data</h3>
+<div class='item'>
+	{{:~link('Add new entry', 'document', { 'add' : 'new' })}}
+</div>
+
+<div class='statusDisplay'>
+	{{if locations}}
+		{{for locations}}
+		  <div class='item'>
+				<span class='average'>{{:name}}:</span>
+				<span class='white'>{{:x}} : {{:y}}</span>
+		  </div>
+		  <div class='item'>
+			{{:~link('Show info', 'arrowreturnthick-1-e', { 'show_info' : reference })}}
+			{{:~link('Remove entry', 'close', { 'remove' : reference })}}
+		  </div>
+		{{/for}}
+	{{/if}}
+</div>	
+

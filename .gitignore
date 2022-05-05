@@ -1,0 +1,19 @@
+###Files and folders specified here will never be tracked.
+
+#Ignore everything in datafolder and subdirectories
+/data/**/*
+
+#Ignore compiled files and other files generated during compilation.
+*.dmb
+*.rsc
+*.lk
+*.int
+
+info.json
+/config/admins.txt
+/config/moderators.txt
+/config/dbconfig.txt
+/statistics
+/deletions
+/maps/backup
+_maps/map_files/tgstation.2.1.3 -EXPERIMENTAL-.dmm
